@@ -3,7 +3,7 @@
     <string name="comments_hint">Comments (optional)</string>
     <string name="cancel_text">Cancel</string>
     <string name="save_text">Save</string>
-    <string name="date_choice_text">Choosing the planting date</string>
+    <string name="date_choice_text">Planting date</string>
     <string name="longitude_hint">Longitude</string>
     <string name="latitude_hint">Latitude</string>
     <string name="minimum_humidity_hint">Minimum humidity</string>
@@ -14,4 +14,6 @@
     <string name="vegetable_text">Vegetable</string>
     <string name="cereal_text">Cereal</string>
     <string name="crop_name_hint">Crop name</string>
+    <string name="current_temperature_title">Current temperature:</string>
+    <string name="current_humidity_title">Current humidity:</string>
 </resources>
