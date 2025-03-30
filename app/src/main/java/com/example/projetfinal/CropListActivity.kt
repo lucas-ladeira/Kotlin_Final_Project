@@ -18,6 +18,7 @@ class CropListActivity : AppCompatActivity() {
         setContentView(R.layout.activity_crop_list)
 
         listViewCrops = findViewById(R.id.listViewCrops)
+
         addButton = findViewById(R.id.addButton)
 
         listViewCrops.setOnItemClickListener { _, _, position, _ ->
