@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class ManageCropActivity : AppCompatActivity() {
+class ManageCropActivity : BaseActivity() {
     private lateinit var editTxtCropName: EditText
     private lateinit var editTxtMaxTemp: EditText
     private lateinit var editTxtMinTemp: EditText

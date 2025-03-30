@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Projet Final</string>
+    <string name="comments_hint">Commentaires (optionnel)</string>
+    <string name="cancel_text">Annuler</string>
+    <string name="save_text">Enregistrer</string>
+    <string name="date_choice_text">Date de plantation</string>
+    <string name="longitude_hint">Longitude</string>
+    <string name="latitude_hint">Latitude</string>
+    <string name="minimum_humidity_hint">Humidité minimale</string>
+    <string name="maximum_humidity_hint">Humidité maximale</string>
+    <string name="minimum_temperature_hint">Température minimale</string>
+    <string name="maximum_temperature_hint">Température maximale</string>
+    <string name="fruit_text">Fruit</string>
+    <string name="vegetable_text">Légume</string>
+    <string name="cereal_text">Céréale</string>
+    <string name="crop_name_hint">Nom de la culture</string>
+    <string name="current_temperature_title">Température actuelle :</string>
+    <string name="current_humidity_title">Humidité actuelle :</string>
+
+</resources>

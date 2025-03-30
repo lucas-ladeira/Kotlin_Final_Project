@@ -8,28 +8,40 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import android.content.Context
+import android.content.res.Configuration
+import java.util.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
     private lateinit var englishButton: Button
     private lateinit var frenchButton: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        //lucas podolski
 
         englishButton = findViewById(R.id.englishButton)
         frenchButton = findViewById(R.id.frenchButton)
 
         englishButton.setOnClickListener {
-            // TODO: Handle English button click
-            val intent = Intent(this, CropListActivity::class.java)
-            startActivity(intent)
+            setAppLanguage("en") // Cambia a inglés
+            reloadApp()
         }
 
         frenchButton.setOnClickListener {
-            // TODO: Handle French button click
-            Toast.makeText(this, "Not implemented yet", Toast.LENGTH_SHORT).show()
+            setAppLanguage("fr") // Cambia a francés
+            reloadApp()
         }
+    }
+
+    private fun setAppLanguage(languageCode: String) {
+        val sharedPref = getSharedPreferences("Settings", MODE_PRIVATE)
+        sharedPref.edit().putString("app_lang", languageCode).apply()
+    }
+
+    private fun reloadApp() {
+        val intent = Intent(this, CropListActivity::class.java)
+        startActivity(intent)
+        finish() // Cierra MainActivity para forzar la recarga
     }
 }
