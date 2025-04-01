@@ -34,7 +34,8 @@ class MainActivity : BaseActivity() {
         }
     }
 
-    private fun setAppLanguage(languageCode: String) {
+    private fun setAppLanguage(languageCode: String) { //l'argument es el codigo de idioma
+
         val sharedPref = getSharedPreferences("Settings", MODE_PRIVATE)
         sharedPref.edit().putString("app_lang", languageCode).apply()
     }

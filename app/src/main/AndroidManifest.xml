@@ -12,31 +12,29 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProjetFinal"
         tools:targetApi="31">
+
         <activity
             android:name=".CropListActivity"
             android:exported="false"
-            android:screenOrientation="unspecified"
-            android:configChanges="locale|layoutDirection"/>
+            android:screenOrientation="sensor"
+            android:configChanges="keyboardHidden|orientation|screenSize|locale|layoutDirection"/>
+
         <activity
             android:name=".ManageCropActivity"
             android:exported="false"
-            android:screenOrientation="unspecified"
-            android:configChanges="locale|layoutDirection"/>
+            android:screenOrientation="sensor"
+            android:configChanges="keyboardHidden|orientation|screenSize|locale|layoutDirection"/>
 
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:screenOrientation="unspecified"
-            android:configChanges="locale|layoutDirection"
-            >
-
+            android:screenOrientation="sensor"
+            android:configChanges="keyboardHidden|orientation|screenSize|locale|layoutDirection">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
     </application>
-
 </manifest>
