@@ -28,8 +28,8 @@
         <RadioGroup
             android:id="@+id/rdGroupCropType"
             android:layout_width="wrap_content"
-            android:orientation="vertical"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
             <RadioButton
                 android:id="@+id/rdBtnCereal"
@@ -52,16 +52,6 @@
         </RadioGroup>
 
         <EditText
-            android:id="@+id/editTxtMaxTemp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:background="@color/white"
-            android:hint="@string/maximum_temperature_hint"
-            android:paddingLeft="3dp"
-            android:textColor="@color/black" />
-
-        <EditText
             android:id="@+id/editTxtMinTemp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -72,12 +62,12 @@
             android:textColor="@color/black" />
 
         <EditText
-            android:id="@+id/editTxtMinHum"
+            android:id="@+id/editTxtMaxTemp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:background="@color/white"
-            android:hint="@string/maximum_humidity_hint"
+            android:hint="@string/maximum_temperature_hint"
             android:paddingLeft="3dp"
             android:textColor="@color/black" />
 
@@ -88,6 +78,16 @@
             android:layout_margin="5dp"
             android:background="@color/white"
             android:hint="@string/minimum_humidity_hint"
+            android:paddingLeft="3dp"
+            android:textColor="@color/black" />
+
+        <EditText
+            android:id="@+id/editTxtMinHum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@color/white"
+            android:hint="@string/maximum_humidity_hint"
             android:paddingLeft="3dp"
             android:textColor="@color/black" />
 
@@ -112,9 +112,9 @@
             android:textColor="@color/black" />
 
         <EditText
+            android:id="@+id/editTxtDateChoice"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/editTxtDateChoice"
             android:layout_margin="5dp"
             android:background="@color/white"
             android:hint="@string/date_choice_text"

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Projet Final</string>
+    <string name="app_name">TerraViva</string>
     <string name="comments_hint">Comments (optional)</string>
     <string name="cancel_text">Cancel</string>
     <string name="save_text">Save</string>
