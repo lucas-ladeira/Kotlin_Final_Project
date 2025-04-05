@@ -20,7 +20,7 @@ class CropDAO(private val db: SQLiteDatabase) {
             put(CropDatabaseHelper.COLUMN_MAX_HUMIDITY, crop.maxHumidity)
             put(CropDatabaseHelper.COLUMN_LATITUDE, crop.latitude)
             put(CropDatabaseHelper.COLUMN_LONGITUDE, crop.longitude)
-            put(CropDatabaseHelper.COLUMN_DATE_CHOICE, crop.dateChoice)
+            put(CropDatabaseHelper.COLUMN_DATE_CHOICE, crop.plantingDate)
             put(CropDatabaseHelper.COLUMN_ADDRESS, crop.address)
             put(CropDatabaseHelper.COLUMN_COMMENTS, crop.comments)
         }
@@ -42,7 +42,7 @@ class CropDAO(private val db: SQLiteDatabase) {
             put(CropDatabaseHelper.COLUMN_MAX_HUMIDITY, crop.maxHumidity)
             put(CropDatabaseHelper.COLUMN_LATITUDE, crop.latitude)
             put(CropDatabaseHelper.COLUMN_LONGITUDE, crop.longitude)
-            put(CropDatabaseHelper.COLUMN_DATE_CHOICE, crop.dateChoice)
+            put(CropDatabaseHelper.COLUMN_DATE_CHOICE, crop.plantingDate)
             put(CropDatabaseHelper.COLUMN_ADDRESS, crop.address)
             put(CropDatabaseHelper.COLUMN_COMMENTS, crop.comments)
         }
