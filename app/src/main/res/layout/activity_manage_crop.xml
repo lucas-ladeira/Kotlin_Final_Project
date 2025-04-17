@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ManageCropActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/editTxtCropName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@color/white"
+            android:hint="@string/crop_name_hint"
+            android:paddingLeft="3dp"
+            android:textColor="@color/black" />
+
+        <RadioGroup
+            android:id="@+id/rdGroupCropType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/rdBtnCereal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cereal_text" />
+
+            <RadioButton
+                android:id="@+id/rdBtnVegetable"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/vegetable_text" />
+
+            <RadioButton
+                android:id="@+id/rdBtnFruit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/fruit_text" />
+
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/editTxtMinTemp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@color/white"
+            android:hint="@string/minimum_temperature_hint"
+            android:paddingLeft="3dp"
+            android:textColor="@color/black" />
+
+        <EditText
+            android:id="@+id/editTxtMaxTemp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@color/white"
+            android:hint="@string/maximum_temperature_hint"
+            android:paddingLeft="3dp"
+            android:textColor="@color/black" />
+
+        <EditText
+            android:id="@+id/editTxtMaxHum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@color/white"
+            android:hint="@string/minimum_humidity_hint"
+            android:paddingLeft="3dp"
+            android:textColor="@color/black" />
+
+        <EditText
+            android:id="@+id/editTxtMinHum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@color/white"
+            android:hint="@string/maximum_humidity_hint"
+            android:paddingLeft="3dp"
+            android:textColor="@color/black" />
+
+        <EditText
+            android:id="@+id/editTxtLatitude"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@color/white"
+            android:hint="@string/latitude_hint"
+            android:paddingLeft="3dp"
+            android:textColor="@color/black" />
+
+        <EditText
+            android:id="@+id/editTxtLongitude"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@color/white"
+            android:hint="@string/longitude_hint"
+            android:paddingLeft="3dp"
+            android:textColor="@color/black" />
+
+        <EditText
+            android:id="@+id/editTxtPlantingDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@color/white"
+            android:clickable="true"
+            android:focusable="false"
+            android:hint="@string/planting_date_text"
+            android:inputType="none"
+            android:paddingLeft="3dp"
+            android:textColor="@color/black" />
+
+        <EditText
+            android:id="@+id/editTxtComments"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@color/white"
+            android:hint="@string/comments_hint"
+            android:paddingLeft="3dp"
+            android:textColor="@color/black" />
+
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:text="@string/save_text" />
+
+        <Button
+            android:id="@+id/btnCancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:text="@string/cancel_text" />
+
+    </LinearLayout>
+
+</RelativeLayout>
