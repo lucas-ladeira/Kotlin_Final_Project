@@ -24,20 +24,21 @@ class MainActivity : BaseActivity() {
         frenchButton = findViewById(R.id.frenchButton)
 
         englishButton.setOnClickListener {
-            setAppLanguage("en") // Cambia a inglés
+            setAppLanguage("en")
             reloadApp()
         }
 
         frenchButton.setOnClickListener {
-            setAppLanguage("fr") // Cambia a francés
+            setAppLanguage("fr")
             reloadApp()
         }
     }
 
-    private fun setAppLanguage(languageCode: String) { //l'argument es el codigo de idioma
-
+    private fun setAppLanguage(languageCode: String) {
+        //private es por default, solo en las ultimas versiones. solo podemos acceder por aca
         val sharedPref = getSharedPreferences("Settings", MODE_PRIVATE)
         sharedPref.edit().putString("app_lang", languageCode).apply()
+        //pongo el valor clickkado con el put, en languagecode y aplico ayncronado con apply
     }
 
     private fun reloadApp() {

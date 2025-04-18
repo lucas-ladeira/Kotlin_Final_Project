@@ -1,24 +1,33 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="10dp">
+    android:padding="16dp">
 
-    <LinearLayout
+    <!-- ListView con scroll integrado -->
+    <ListView
+        android:id="@+id/listViewCrops"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:layout_above="@+id/buttonContainer"
+        android:clipToPadding="false"
+        android:scrollbarStyle="outsideOverlay"/>
 
-        <ListView
-            android:id="@+id/listViewCrops"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="3"/>
+    <!-- Contenedor para el FAB -->
+    <LinearLayout
+        android:id="@+id/buttonContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="16dp">
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/addButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:src="@drawable/ic_add"/>
+            app:srcCompat="@drawable/ic_add"
+            app:backgroundTint="@color/green"
+            app:layout_anchorGravity="bottom|right|end"/>
     </LinearLayout>
 </RelativeLayout>

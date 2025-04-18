@@ -5,49 +5,50 @@ import android.app.NotificationManager
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.os.Build
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
+import androidx.core.content.ContextCompat
 
 class NotificationHelper(private val context: Context) {
     companion object {
-        // Identifiants constants pour le canal de notification et les notifications
         const val CHANNEL_ID = "temperature_alerts_channel"
-        const val NOTIFICATION_ID = 1
-
+        const val NOTIFICATION_PERMISSION = android.Manifest.permission.POST_NOTIFICATIONS
     }
 
-init {
-    createNotificationChannel()
-}
+    init {
+        createNotificationChannel()
+    }
 
     private fun createNotificationChannel() {
-        // Vérification de la version d'Android (les canaux ne sont nécessaires qu'à partir d'Oreo)
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            // Configuration du canal
             val name = "Alertes de température"
-            val descriptionText = "Notifications lorsque la température dépasse la temperature adequate"
+            val description = "Notifications pour les températures anormales des cultures"
             val importance = NotificationManager.IMPORTANCE_HIGH
 
             val channel = NotificationChannel(CHANNEL_ID, name, importance).apply {
-                description = descriptionText
-                // Ici vous pourriez ajouter d'autres configurations comme le son, la vibration, etc.
+                this.description = description
+                enableVibration(true)
+                vibrationPattern = longArrayOf(0, 500, 250, 500)
             }
 
-            // Enregistrement du canal auprès du système
             val notificationManager = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
             notificationManager.createNotificationChannel(channel)
         }
     }
 
-    fun showTemperatureAlert(crop: Crop, isTooHigh: Boolean) {
-        // Intent pour ouvrir l'application quand on clique sur la notification
+    fun showTemperatureAlert(crop: Crop, isTooHigh: Boolean): Boolean {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            if (ContextCompat.checkSelfPermission(context, NOTIFICATION_PERMISSION) != PackageManager.PERMISSION_GRANTED) {
+                return false
+            }
+        }
 
         val intent = Intent(context, MainActivity::class.java).apply {
             flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         }
 
-        // PendingIntent pour l'action de clic
         val pendingIntent = PendingIntent.getActivity(
             context,
             0,
@@ -55,31 +56,28 @@ init {
             PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT
         )
 
-        // Construction du message en fonction du type d'alerte
         val message = if (isTooHigh) {
             "Température trop élevée pour '${crop.name}' (Max: ${crop.maxTemperature}°C)"
         } else {
             "Température trop basse pour '${crop.name}' (Min: ${crop.minTemperature}°C)"
         }
 
-        // Construction de la notification
         val builder = NotificationCompat.Builder(context, CHANNEL_ID)
-            .setSmallIcon(R.drawable.santa) // Icône de la notification
-            .setContentTitle("Alerte de température") // Titre
-            .setContentText(message) // Message principal
-            .setPriority(NotificationCompat.PRIORITY_HIGH) // Priorité haute
-            .setContentIntent(pendingIntent) // Action au clic
-            .setAutoCancel(true) // La notification disparaît au clic
-            .setVisibility(NotificationCompat.VISIBILITY_PUBLIC) // Visible sur l'écran verrouillé
+            .setSmallIcon(R.drawable.santa)
+            .setContentTitle("Alerte de température")
+            .setContentText(message)
+            .setPriority(NotificationCompat.PRIORITY_HIGH)
+            .setContentIntent(pendingIntent)
+            .setAutoCancel(true)
+            .setVisibility(NotificationCompat.VISIBILITY_PUBLIC)
+            .setVibrate(longArrayOf(0, 500, 250, 500))
 
-        // Affichage de la notification
-        with(NotificationManagerCompat.from(context)) {
-            // Utilisation de l'ID de la tâche comme ID de notification pour éviter les doublons
-
-
-            //notify (crop.id, builder.build())
-
-            //OJO PENDIENTE CORREGIR EL ID
+        try {
+            NotificationManagerCompat.from(context).notify(crop.id.hashCode(), builder.build())
+            return true
+        } catch (e: Exception) {
+            e.printStackTrace()
+            return false
         }
     }
 }

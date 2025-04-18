@@ -5,31 +5,24 @@ import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import java.util.Locale
 
-open class BaseActivity : AppCompatActivity() { // open parce que permett heritage
+open class BaseActivity : AppCompatActivity() {
 
     override fun attachBaseContext(newBase: Context) {
 
-        //Activité cree pour le changement de langue, et faire heritait de cette activité
+        val lang = newBase.getSharedPreferences("Settings", MODE_PRIVATE)
+            .getString("app_lang", "en") ?: "en"
 
-        val sharedPref = newBase.getSharedPreferences("Settings", MODE_PRIVATE)
-
-        val lang = sharedPref.getString("app_lang", "en") ?: "en" // doble seguridad
-        //obtengo el valor de la llave app_lang
-        super.attachBaseContext(setLocale(newBase, lang))
-        // el super llama el metodo de la clase padre, el setlocale change la langue
+        super.attachBaseContext(updateLocale(newBase, lang))
     }
 
+    private fun updateLocale(context: Context, lang: String): Context {
+        Locale.setDefault(Locale(lang))// locale es class java
 
+        //Aplicar a la configuración
+        val config = context.resources.configuration
+        config.setLocale(Locale(lang))
 
-    // Función para cambiar el idioma
-    fun setLocale(context: Context, languageCode: String): Context {
-
-        val locale = Locale(languageCode) //locale class de java -congfiguracion regional
-        Locale.setDefault(locale) // etabli predetermine
-
-
-        val config = Configuration (context.resources.configuration) //configuration class de android, prendre actuel
-        config.setLocale(locale)// apli lcoale
-        return context.createConfigurationContext(config) //return context nouvell config
+        //Devolver nuevo contexto con la configuración
+        return context.createConfigurationContext(config)
     }
 }
