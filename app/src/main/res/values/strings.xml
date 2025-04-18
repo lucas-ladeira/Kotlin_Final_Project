@@ -1,9 +1,9 @@
 <resources>
-    <string name="app_name">Projet Final</string>
+    <string name="app_name">TerraViva</string>
     <string name="comments_hint">Comments (optional)</string>
     <string name="cancel_text">Cancel</string>
     <string name="save_text">Save</string>
-    <string name="date_choice_text">Planting date</string>
+    <string name="planting_date_text">Planting date</string>
     <string name="longitude_hint">Longitude</string>
     <string name="latitude_hint">Latitude</string>
     <string name="minimum_humidity_hint">Minimum humidity</string>
@@ -14,6 +14,16 @@
     <string name="vegetable_text">Vegetable</string>
     <string name="cereal_text">Cereal</string>
     <string name="crop_name_hint">Crop name</string>
+    <string name="crop_type_text">crop type</string>
+    <string name="crop_temperatures_text">Min°C / Max°C</string>
+    <string name="crop_humidities_text">Min% / Max%</string>
     <string name="current_temperature_title">Current temperature:</string>
     <string name="current_humidity_title">Current humidity:</string>
+    <string name="planting_date_title">Planted on: </string>
+    <string name="crop_address_title">Address: </string>
+    <string name="crop_type_title">Type:</string>
+    <string name="crop_temperatures_title">Temperature:</string>
+    <string name="crop_humidities_title">"Humidity: "</string>
+    <string name="planting_date_value">DD/MM/YYYY</string>
+    <string name="crop_address_value">----</string>
 </resources>

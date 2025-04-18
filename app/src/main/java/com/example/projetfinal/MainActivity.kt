@@ -8,11 +8,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import android.content.Context
-import android.content.res.Configuration
-import java.util.*
 
-class MainActivity : BaseActivity() {
+class MainActivity : AppCompatActivity() {
     private lateinit var englishButton: Button
     private lateinit var frenchButton: Button
 
@@ -24,26 +21,14 @@ class MainActivity : BaseActivity() {
         frenchButton = findViewById(R.id.frenchButton)
 
         englishButton.setOnClickListener {
-            setAppLanguage("en")
-            reloadApp()
+            // TODO: Handle English button click
+            val intent = Intent(this, CropListActivity::class.java)
+            startActivity(intent)
         }
 
         frenchButton.setOnClickListener {
-            setAppLanguage("fr")
-            reloadApp()
+            // TODO: Handle French button click
+            Toast.makeText(this, "Not implemented yet", Toast.LENGTH_SHORT).show()
         }
-    }
-
-    private fun setAppLanguage(languageCode: String) {
-        //private es por default, solo en las ultimas versiones. solo podemos acceder por aca
-        val sharedPref = getSharedPreferences("Settings", MODE_PRIVATE)
-        sharedPref.edit().putString("app_lang", languageCode).apply()
-        //pongo el valor clickkado con el put, en languagecode y aplico ayncronado con apply
-    }
-
-    private fun reloadApp() {
-        val intent = Intent(this, CropListActivity::class.java)
-        startActivity(intent)
-        finish() // Cierra MainActivity para forzar la recarga
     }
 }

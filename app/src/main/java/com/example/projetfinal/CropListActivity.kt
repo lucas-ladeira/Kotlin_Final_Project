@@ -9,7 +9,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
-class CropListActivity : BaseActivity() {
+class CropListActivity : AppCompatActivity() {
     private lateinit var listViewCrops: ListView
     private lateinit var addButton: FloatingActionButton
 
@@ -17,11 +17,7 @@ class CropListActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_crop_list)
 
-
-
-
         listViewCrops = findViewById(R.id.listViewCrops)
-
         addButton = findViewById(R.id.addButton)
 
         listViewCrops.setOnItemClickListener { _, _, position, _ ->
@@ -37,7 +33,5 @@ class CropListActivity : BaseActivity() {
             val intent = Intent(this, ManageCropActivity::class.java)
             startActivity(intent)
         }
-
-
     }
 }
