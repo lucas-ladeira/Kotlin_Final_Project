@@ -26,4 +26,24 @@
     <string name="crop_humidities_title">"Humidity: "</string>
     <string name="planting_date_value">DD/MM/YYYY</string>
     <string name="crop_address_value">----</string>
+    <string name="temperature_alerts">Temperature Alerts</string>
+    <string name="temperature_alerts_description">Alerts when the temperature is out of the desired range</string>
+
+    <string name="humidity_alerts">Humidity Alerts</string>
+    <string name="humidity_alerts_description">Alerts when the humidity is out of range</string>
+
+    <string name="general_alerts">Current Conditions</string>
+
+    <string name="high_temp_alert">%1$s: Current temperature %2$.1f°C exceeds the allowed maximum %3$.1f°C.</string>
+    <string name="low_temp_alert">%1$s: Current temperature %2$.1f°C is below the allowed minimum %3$.1f°C.</string>
+
+    <string name="high_humidity_alert">%1$s: Current humidity %2$.1f%% exceeds the allowed maximum %3$.1f%%.</string>
+    <string name="low_humidity_alert">%1$s: Current humidity %2$.1f%% is below the allowed minimum %3$.1f%%.</string>
+
+    <string name="temperature_alert_title">Temperature Alert</string>
+    <string name="humidity_alert_title">Humidity Alert</string>
+    <string name="current_conditions_title">Current Conditions</string>
+
+    <string name="current_conditions">%1$s: %2$.1f°C (%3$.1f - %4$.1f°C), %5$.1f%%H (%6$.1f - %7$.1f%%)</string>
+    <string name="date_choice_text">Plantation Date</string>
 </resources>

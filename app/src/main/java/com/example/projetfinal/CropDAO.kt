@@ -7,8 +7,7 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 
 class CropDAO(private val db: SQLiteDatabase) {
-    private val firebaseDatabase: DatabaseReference =
-        FirebaseDatabase.getInstance().getReference("crops")
+    private val firebaseDatabase: DatabaseReference = FirebaseDatabase.getInstance().getReference("crops")
 
     fun insertCrop(crop: Crop): Long {
         val values = ContentValues().apply {

@@ -18,5 +18,36 @@
     <string name="crop_name_hint">Nom de la culture</string>
     <string name="current_temperature_title">Température actuelle :</string>
     <string name="current_humidity_title">Humidité actuelle :</string>
+    <string name="planting_date_title">Planté le :</string>
+    <string name="crop_address_title">Adresse :</string>
+    <string name="crop_type_title">Type :</string>
+    <string name="crop_temperatures_title">Température :</string>
+    <string name="crop_humidities_title">Humidité :</string>
+    <string name="planting_date_value">JJ/MM/AAAA</string>
+    <string name="crop_address_value">----</string>
+    <string name="crop_type_text">type de culture</string>
+    <string name="crop_temperatures_text">Min°C / Max°C</string>
+    <string name="crop_humidities_text">Min% / Max%</string>
+    <string name="planting_date_text">Date de plantation</string>
+    <string name="temperature_alerts">Alertes de Température</string>
+    <string name="temperature_alerts_description">Alertes lorsque la température est hors de la plage souhaitée</string>
+
+    <string name="humidity_alerts">Alertes Humidité</string>
+    <string name="humidity_alerts_description">Alertes lorsque humidité est hors de la plage</string>
+
+    <string name="general_alerts">Conditions Actuelles</string>
+
+    <string name="high_temp_alert">%1$s : Température actuelle %2$.1f°C dépasse le maximum autorisé de %3$.1f°C.</string>
+    <string name="low_temp_alert">%1$s : Température actuelle %2$.1f°C est en dessous du minimum autorisé de %3$.1f°C.</string>
+
+    <string name="high_humidity_alert">%1$s : Humidité actuelle %2$.1f%% dépasse le maximum autorisé de %3$.1f%%.</string>
+    <string name="low_humidity_alert">%1$s : Humidité actuelle %2$.1f%% est en dessous du minimum autorisé de %3$.1f%%.</string>
+
+    <string name="temperature_alert_title">Alerte de Température</string>
+    <string name="humidity_alert_title">Alerte Humidite</string>
+    <string name="current_conditions_title">Conditions Actuelles</string>
+
+    <string name="current_conditions">%1$s : %2$.1f°C (%3$.1f - %4$.1f°C), %5$.1f%%H (%6$.1f - %7$.1f%%)</string>
+
 
 </resources>
